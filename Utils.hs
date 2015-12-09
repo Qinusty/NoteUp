@@ -1,7 +1,7 @@
 module Utils where
 
 trim :: [Char] -> [Char]
-trim = removeTrailing ' ' . reverse . removeTrailing ' '
+trim = reverse . removeTrailing ' ' . reverse . removeTrailing ' '
 	where
 	removeTrailing :: Char -> [Char] -> [Char]
 	removeTrailing _ [] = []
