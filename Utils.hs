@@ -7,7 +7,7 @@ trim = reverse . removeTrailing ' ' . reverse . removeTrailing ' '
 	removeTrailing _ [] = []
 	removeTrailing a (c:cs) 
 		| (a == c) = removeTrailing a cs
-		| otherwise = cs
+		| otherwise = (c:cs)
 
 listOf :: Char -> Int -> [Char]
 listOf _ 0 = []
