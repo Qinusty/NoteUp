@@ -3,7 +3,7 @@ import Utils
 
 main = do
 	content <- getContents
-	print $ unlines $ convertToRST $ lines content
+	mapM_ putStrLn $ convertToRST $ lines $content	
 
 convertToRST :: [[Char]] -> [[Char]]
 convertToRST = parseLines . map trim
