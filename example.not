@@ -1,0 +1,21 @@
+>TITLE
+
+=> Header
+
+-> Heading
+text can go here...
+
+:Bullet
+:Points
+::With Sub Points
+
+--> Sub heading
+This is a code segment
+
+#code 
+main = do
+	putStrLn "Hello World!"
+#endcode
+
+This is not inside the code...
+

@@ -12,3 +12,4 @@ trim = reverse . removeTrailing ' ' . reverse . removeTrailing ' '
 listOf :: Char -> Int -> [Char]
 listOf _ 0 = []
 listOf c i = c : listOf c (i-1)
+
