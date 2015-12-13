@@ -20,7 +20,7 @@ parseLines (('-':'>':cs):css) = (trim cs) : (listOf '-' (length cs)) : parseLine
 -- Subsection headings
 parseLines (('-':'-':'>':cs):css) = (trim cs) : (listOf '~' (length cs)) : parseLines css
 -- Code Sections
-parseLines (('#':'c':'o':'d':'e':cs):css) = (".. code:: " ++ (trim cs)) : 
+parseLines (('#':'c':'o':'d':'e':cs):css) = ("\n.. code:: " ++ (trim cs) ++ "\n") :
 						((map indent (takeWhile stopFunct css)) ++ 
 						(parseLines $ tail $ (dropWhile stopFunct css)))
 						where
