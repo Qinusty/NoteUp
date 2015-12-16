@@ -22,7 +22,7 @@ Using
 
 .. code:: 
 
-	cat inputFile.not | ./main > outputFile.rst
+	cat inputFile.not | ./NoteParser > outputFile.rst
 Requirements
 ~~~~~~~~~~~~~
 * ghc - Haskell compiler

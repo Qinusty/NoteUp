@@ -14,7 +14,7 @@ ghc --make main.hs
 #endcode
 -> Using
 #code
-cat inputFile.not | ./main > outputFile.rst 
+cat inputFile.not | ./NoteParser > outputFile.rst 
 #endcode
 --> Requirements
 #list

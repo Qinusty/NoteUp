@@ -1,4 +1,4 @@
-module Main where
+module NoteParser (parseLines) where
 import Utils
 
 main = do
@@ -24,8 +24,8 @@ parseLines (('#':'l':'i':'s':'t':_):css) =  (map (\line -> "* " ++ line) (takeWh
 						(parseLines $ tail $ (dropWhile stopFunct css))
 						where
 						stopFunct = (\line -> (trim line) /= "#endlist")
--- Code Sections
-parseLines (('#':'c':'o':'d':'e':cs):css) = ("\n.. code:: " ++ (trim cs) ++ "\n") :
+-- Code Sections -- RST requires a newline either side of the ".. code:: "
+parseLines (('#':'c':'o':'d':'e':cs):css) = [] : ( ".. code:: " ++ (trim cs)) : [] :
 						((map indent (takeWhile stopFunct css)) ++ 
 						(parseLines $ tail $ (dropWhile stopFunct css)))
 						where
