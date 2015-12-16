@@ -7,14 +7,16 @@ A simple markup language written for the purpose of simplistic note formatting.
 TODO : Basic documentation of the available features...
 
 -> Installing
-#code
+#code Bash
 git clone https://github.com/Qinusty/NotesMarkupConverter.git 
-cd NotesMarkupConverter
-cat example.not | ./main > output.rst 
+#endcode
+-> Using
+#code
+cat inputFile.not | ./main > outputFile.rst 
 #endcode
 --> Requirements
-
+#list
 ghc - Haskell compiler 
-
 Pandoc - http://pandoc.org/
+#endlist
 

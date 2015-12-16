@@ -5,9 +5,11 @@
 -> Heading
 text can go here...
 
-:Bullet
-:Points
-::With Sub Points
+#list
+Point a
+Point b
+Point c
+#endlist
 
 --> Sub heading
 This is a code segment

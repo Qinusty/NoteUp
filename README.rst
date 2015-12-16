@@ -15,12 +15,14 @@ Installing
 .. code:: Bash
 
 	git clone https://github.com/Qinusty/NotesMarkupConverter.git
-	cd NotesMarkupConverter
-	cat example.not | ./main > output.rst
+Using
+------
+
+.. code:: 
+
+	cat inputFile.not | ./main > outputFile.rst
 Requirements
 ~~~~~~~~~~~~~
-
-ghc - Haskell compiler
-
-Pandoc - http://pandoc.org/
+* ghc - Haskell compiler
+* Pandoc - http://pandoc.org/
 

@@ -19,6 +19,11 @@ parseLines (('=':'>':cs):css) = (listOf '-' (length cs)) : (trim cs) : (listOf '
 parseLines (('-':'>':cs):css) = (trim cs) : (listOf '-' (length cs)) : parseLines css
 -- Subsection headings
 parseLines (('-':'-':'>':cs):css) = (trim cs) : (listOf '~' (length cs)) : parseLines css
+-- Lists
+parseLines (('#':'l':'i':'s':'t':_):css) =  (map (\line -> "* " ++ line) (takeWhile stopFunct css)) ++
+						(parseLines $ tail $ (dropWhile stopFunct css))
+						where
+						stopFunct = (\line -> (trim line) /= "#endlist")
 -- Code Sections
 parseLines (('#':'c':'o':'d':'e':cs):css) = ("\n.. code:: " ++ (trim cs) ++ "\n") :
 						((map indent (takeWhile stopFunct css)) ++ 
