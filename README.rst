@@ -15,6 +15,8 @@ Installing
 .. code:: Bash
 
 	git clone https://github.com/Qinusty/NotesMarkupConverter.git
+	cd NotesMarkupConverter.git
+	ghc --make main.hs
 Using
 ------
 
