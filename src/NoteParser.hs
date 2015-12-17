@@ -1,4 +1,4 @@
-module NoteParser (parseLines) where
+module Main (main, parseLines) where
 import Utils
 
 main = do
