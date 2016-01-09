@@ -14,11 +14,11 @@ parseLines [] = []
 -- Title
 parseLines (('>':cs):css) = (listOf '=' (length cs)) : (trim cs) : (listOf '=' (length cs)) : parseLines css
 -- Header
-parseLines (('=':'>':cs):css) = (listOf '-' (length cs)) : (trim cs) : (listOf '-' (length cs)) : parseLines css
+parseLines (('=':'>':cs):css) = [] : (listOf '-' (length cs)) : (trim cs) : (listOf '-' (length cs)) : parseLines css
 -- section headings
-parseLines (('-':'>':cs):css) = (trim cs) : (listOf '-' (length cs)) : parseLines css
+parseLines (('-':'>':cs):css) = [] : (trim cs) : (listOf '-' (length cs)) : parseLines css
 -- Subsection headings
-parseLines (('-':'-':'>':cs):css) = (trim cs) : (listOf '~' (length cs)) : parseLines css
+parseLines (('-':'-':'>':cs):css) = [] : (trim cs) : (listOf '~' (length cs)) : parseLines css
 -- Lists
 parseLines (('#':'l':'i':'s':'t':_):css) =  (map (\line -> "* " ++ line) (takeWhile stopFunct css)) ++
 						(parseLines $ tail $ (dropWhile stopFunct css))
