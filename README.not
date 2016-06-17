@@ -18,7 +18,8 @@ cat inputFile.not | ./NoteParser > outputFile.rst
 #endcode
 --> Requirements
 #list
-ghc - Haskell compiler 
+ghc - Haskell compiler
+Latex compiler (Pandoc compatible - texlive - pdftex)
 Pandoc - http://pandoc.org/
 #endlist
 
