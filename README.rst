@@ -26,5 +26,7 @@ Using
 Requirements
 ~~~~~~~~~~~~~
 * ghc - Haskell compiler
+* Latex compiler (Pandoc compatible - texlive - pdftex)
 * Pandoc - http://pandoc.org/
+
 
